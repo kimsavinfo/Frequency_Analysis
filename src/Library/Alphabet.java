@@ -8,9 +8,9 @@ import java.util.HashMap;
 public class Alphabet
 {
     private final String[] m_latin;
-    private final HashMap<String, Double> m_monogrammeFr;
-    private final HashMap<String, Double> m_bigrammeFr;
-    private final HashMap<String, Double> m_trigrammeFr;
+    private HashMap<String, Double> m_monogrammeFr;
+    private HashMap<String, Double> m_bigrammeFr;
+    private HashMap<String, Double> m_trigrammeFr;
 
     public Alphabet()
     {
@@ -18,6 +18,10 @@ public class Alphabet
         m_monogrammeFr = new HashMap<String, Double>();
         m_bigrammeFr = new HashMap<String, Double>();
         m_trigrammeFr = new HashMap<String, Double>();
+
+        setMonogrammeFr();
+        setBigrammeFr();
+        setTrigrammeFr();
     }
 
     private void setMonogrammeFr()
@@ -48,6 +52,11 @@ public class Alphabet
         m_monogrammeFr.put("X", 0.45);
         m_monogrammeFr.put("Y", 0.30);
         m_monogrammeFr.put("Z", 0.12);
+
+        m_monogrammeFr = (HashMap<String, Double>)MapManager.sortByComparator(m_monogrammeFr, false);
+
+        System.out.println("******** MONOGRAMME FR ********");
+        System.out.println(m_monogrammeFr);
     }
 
     private void setBigrammeFr()
@@ -72,6 +81,11 @@ public class Alphabet
         m_bigrammeFr.put("OU", 1.086);
         m_bigrammeFr.put("EM", 1.056);
         m_bigrammeFr.put("IE", 1.030);
+
+        m_bigrammeFr = (HashMap<String, Double>)MapManager.sortByComparator(m_bigrammeFr, false);
+
+        System.out.println("******** BIGRAMME FR ********");
+        System.out.println(m_bigrammeFr);
     }
 
     private void setTrigrammeFr()
@@ -96,6 +110,32 @@ public class Alphabet
         m_trigrammeFr.put("PAR", 0.360);
         m_trigrammeFr.put("ESD", 0.351);
         m_trigrammeFr.put("TDE", 0.350);
+
+        m_trigrammeFr = (HashMap<String, Double>)MapManager.sortByComparator(m_trigrammeFr, false);
+
+        System.out.println("******** TRIGRAMME FR ********");
+        System.out.println(m_trigrammeFr);
     }
 
+    public HashMap<String, Double> getMonogrammeFr()
+    {
+        return m_monogrammeFr;
+    }
+
+
+    public HashMap<String, Double> getBigrammeFr()
+    {
+        return m_bigrammeFr;
+    }
+
+
+    public HashMap<String, Double> getTrigrammeFr()
+    {
+        return m_trigrammeFr;
+    }
+
+    public String[] getLatin()
+    {
+        return m_latin;
+    }
 }
