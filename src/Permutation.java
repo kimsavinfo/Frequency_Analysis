@@ -82,13 +82,17 @@ public class Permutation{
         return this.association;
     }
 
-    public String lol() {
+    // Void pour le moment, à changer après
+    //String tried = uncryptedString.replace("D","e");
+    //tried = tried.replace("E","a");
+    public void lol()
+    {
         String uncryptedString = this.m_cryptedString;
-        String tried = uncryptedString.replace("D","e");
-        tried = tried.replace("E","a");
 
+        foreach()
+        {
 
-        return tried.toUpperCase();
+        }
     }
 
     public String GetcryptedString(){return m_cryptedString;}

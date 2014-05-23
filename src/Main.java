@@ -32,6 +32,7 @@ public class Main
         m_lettersFrequency = m_frequencyAnalyseFr.CalculCharFrequency();
         showCharFrequency(m_lettersFrequency);
 
+        cryptedString.lol();
     }
 
 
