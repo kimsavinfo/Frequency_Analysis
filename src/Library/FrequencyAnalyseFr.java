@@ -61,7 +61,7 @@ public class FrequencyAnalyseFr
      * Map <string, frequency>
      * @return chars with their frequency in the text
      */
-    public HashMap<String, Double>  CalculCharFrequency()
+    public HashMap<String, Double> CalculCharFrequencyMono()
     {
         HashMap<String, Double> frequency = this.CharPresence();
         int totalChars = m_textToAnalyse.length();
@@ -70,6 +70,19 @@ public class FrequencyAnalyseFr
         {
             frequency.put(key, frequency.get(key)/totalChars*100);
 
+        }
+
+        return (HashMap<String, Double>)MapManager.sortByComparator(frequency, false);
+    }
+
+    public HashMap<String, Double> calculCharFrequencyBi()
+    {
+        HashMap<String, Double> frequency = this.CharPresence();
+        int totalChars = m_textToAnalyse.length();
+
+        for (String key : frequency.keySet())
+        {
+            frequency.put(key, frequency.get(key)/totalChars*100);
         }
 
         return (HashMap<String, Double>)MapManager.sortByComparator(frequency, false);

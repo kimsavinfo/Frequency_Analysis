@@ -89,13 +89,15 @@ public class Permutation{
     public void lol()
     {
         String uncryptedString = this.m_cryptedString;
+        HashMap<String, Double> finalTab = new HashMap<String, Double>();
 
         // analyse fréquentielle mono
         FrequencyAnalyseFr frequencyAnalyseFr = new FrequencyAnalyseFr();
         frequencyAnalyseFr.setTextToAnalyse(m_cryptedString);
-        HashMap<String, Double> lettersFrequencyMono = frequencyAnalyseFr.CalculCharFrequency();
+        HashMap<String, Double> lettersFrequencyMono = frequencyAnalyseFr.CalculCharFrequencyMono();
 
-        
+        // analyse fréquentielle bi
+
     }
 
     public String GetcryptedString(){return m_cryptedString;}

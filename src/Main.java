@@ -23,13 +23,13 @@ public class Main
         System.out.println("");
         System.out.println("");
         System.out.println("============= 1er analyse =============");
-        m_lettersFrequency = m_frequencyAnalyseFr.CalculCharFrequency();
+        m_lettersFrequency = m_frequencyAnalyseFr.CalculCharFrequencyMono();
         showCharFrequency(m_lettersFrequency);
 
         Permutation cryptedString = new Permutation();
         cryptedString.Crypting(m_textTest);
         m_frequencyAnalyseFr.setTextToAnalyse(cryptedString.GetcryptedString());
-        m_lettersFrequency = m_frequencyAnalyseFr.CalculCharFrequency();
+        m_lettersFrequency = m_frequencyAnalyseFr.CalculCharFrequencyMono();
         showCharFrequency(m_lettersFrequency);
 
         cryptedString.lol();
@@ -42,7 +42,7 @@ public class Main
         // Test = MUST BE DELETED/ERASE
         System.out.println("");
         System.out.println("");
-        System.out.println(" CalculCharFrequency, char total : "+m_textTest.length());
+        System.out.println(" CalculCharFrequencyMono, char total : "+m_textTest.length());
 
         int totalChars = m_textTest.length();
 
