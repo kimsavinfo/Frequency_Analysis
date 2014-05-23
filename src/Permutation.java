@@ -1,4 +1,5 @@
-package project_crypto.Models;
+
+import Library.Alphabet;
 
 import java.util.HashMap;
 
@@ -11,15 +12,17 @@ import java.util.HashMap;
  *
  * * This class crypt and decrypt whith Permutation Crypting as it's name suggests !
  */
-public class Permutation extends Crypting{
+public class Permutation{
 
     //Variable
     private HashMap<String, String> association = new HashMap<String, String>();
+    private String m_readableString, m_cryptedString;
+    private Alphabet m_alphabet;
     //End variable
 
     public Permutation()
     {
-        super();
+
     }
 
     //This method crypt a string using permutation crypting
@@ -42,6 +45,12 @@ public class Permutation extends Crypting{
         System.out.println("Crypted String : "+this.m_cryptedString);
     }
 
+    //Return random int beetwen 0 to alphabet's length
+    protected int GetRandom()
+    {
+        int maxValue = this.m_alphabet.getLatin().length;
+        return (int)(Math.random() * (maxValue));
+    }
 
     //This method return a letter in alphabet's tab which is not in this.association
     public String GetVacantRandomLetter()
@@ -52,13 +61,13 @@ public class Permutation extends Crypting{
 
         while(!find)
         {
-            if(this.association.containsValue(this.m_alphabet.GetLatin()[random]))
+            if(this.association.containsValue(this.m_alphabet.getLatin()[random]))
             {
                 random = GetRandom();
             }
             else
             {
-                letter = this.m_alphabet.GetLatin()[random];
+                letter = this.m_alphabet.getLatin()[random];
                 find = true;
             }
         }
