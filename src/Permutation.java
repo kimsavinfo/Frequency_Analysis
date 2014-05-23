@@ -1,5 +1,6 @@
 
 import Library.Alphabet;
+import Library.FrequencyAnalyseFr;
 
 import java.util.HashMap;
 
@@ -89,7 +90,12 @@ public class Permutation{
     {
         String uncryptedString = this.m_cryptedString;
 
-        
+        // analyse fréquentielle mnono
+        FrequencyAnalyseFr frequencyAnalyseFr = new FrequencyAnalyseFr();
+        frequencyAnalyseFr.setTextToAnalyse(m_cryptedString);
+        HashMap<String, Double> lettersFrequencyMono = frequencyAnalyseFr.CalculCharFrequency();
+
+
     }
 
     public String GetcryptedString(){return m_cryptedString;}
