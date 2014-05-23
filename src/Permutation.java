@@ -28,8 +28,11 @@ public class Permutation{
     //This method crypt a string using permutation crypting
     public void Crypting(String p_textToCrypt)
     {
-        System.out.println("String to crypt : "+this.m_readableString);
+
         this.m_readableString = p_textToCrypt;
+
+        System.out.println("String to crypt : "+this.m_readableString);
+
         String permutString;
         for(int i = 0; i < this.m_readableString.length(); i++)
         {

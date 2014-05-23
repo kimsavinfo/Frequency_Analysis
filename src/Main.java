@@ -25,7 +25,11 @@ public class Main
         System.out.println("============= 1er analyse =============");
         m_lettersFrequency = m_frequencyAnalyseFr.CalculCharFrequency();
         showCharFrequency(m_lettersFrequency);
+        
+        Permutation cryptedString = new Permutation();
+        cryptedString.Crypting(m_textTest);
     }
+
 
 
     private static void showCharFrequency(HashMap<String, Double> p_lettersFrequencies)
