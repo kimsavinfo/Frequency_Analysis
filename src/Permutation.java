@@ -90,12 +90,12 @@ public class Permutation{
     {
         String uncryptedString = this.m_cryptedString;
 
-        // analyse fréquentielle mnono
+        // analyse fréquentielle mono
         FrequencyAnalyseFr frequencyAnalyseFr = new FrequencyAnalyseFr();
         frequencyAnalyseFr.setTextToAnalyse(m_cryptedString);
         HashMap<String, Double> lettersFrequencyMono = frequencyAnalyseFr.CalculCharFrequency();
 
-
+        
     }
 
     public String GetcryptedString(){return m_cryptedString;}
