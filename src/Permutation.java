@@ -89,10 +89,7 @@ public class Permutation{
     {
         String uncryptedString = this.m_cryptedString;
 
-        foreach()
-        {
-
-        }
+        
     }
 
     public String GetcryptedString(){return m_cryptedString;}
