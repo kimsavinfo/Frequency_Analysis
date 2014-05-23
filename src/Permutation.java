@@ -16,13 +16,13 @@ public class Permutation{
 
     //Variable
     private HashMap<String, String> association = new HashMap<String, String>();
-    private String m_readableString, m_cryptedString;
+    private String m_readableString, m_cryptedString="";
     private Alphabet m_alphabet;
     //End variable
 
     public Permutation()
     {
-
+        m_alphabet = new Alphabet();
     }
 
     //This method crypt a string using permutation crypting
